@@ -35,15 +35,16 @@ class ApplicationMessages extends React.Component {
     this.setState({ isLoading: true });
     // gets all data for spesific application based on roll number
     const proxyurl = "https://cors-anywhere.herokuapp.com/";
+    const jaiProxyURL = "https://nameless-hamlet-06819.herokuapp.com/";
     const url =
       "http://securedmessaging.azurewebsites.net/api/ApplicationMessages/" +
       this.props.location.state.rollNumber;
-    fetch(proxyurl + url)
+    fetch(jaiProxyURL + url)
       .then((res) => res.json())
       .then((data) => this.setState({ data: data }))
       .then(
         fetch(
-          proxyurl +
+          jaiProxyURL +
             "http://securedmessaging.azurewebsites.net/api/Message_Chain"
         )
           .then((res) => res.json())
@@ -54,7 +55,7 @@ class ApplicationMessages extends React.Component {
       .then(
         // gets all message_subject to determin the next subject ID when user is sending new message
         fetch(
-          proxyurl +
+          jaiProxyURL +
             "http://securedmessaging.azurewebsites.net/api/Message_Subject"
         )
           .then((res) => res.json())
@@ -120,6 +121,7 @@ class ApplicationMessages extends React.Component {
     let messageSubjectId = this.state.formSelectedSubjectId;
 
     const proxyurl = "https://cors-anywhere.herokuapp.com/";
+    const jaiProxyURL = "https://nameless-hamlet-06819.herokuapp.com/";
 
     // IF replying to exisiting message NEW subject DOES NOT need creating first
     // If NEW suject two fetch methods one for subject then one for chain
@@ -128,7 +130,7 @@ class ApplicationMessages extends React.Component {
 
       try {
         fetch(
-          proxyurl +
+          jaiProxyURL +
             "http://securedmessaging.azurewebsites.net/api/Message_Subject",
           {
             method: "POST",
@@ -144,7 +146,7 @@ class ApplicationMessages extends React.Component {
           }
         )
           .then(fetch(
-            proxyurl +
+            jaiProxyURL +
               "http://securedmessaging.azurewebsites.net/api/Message_Chain",
             {
               method: "POST",
@@ -169,7 +171,7 @@ class ApplicationMessages extends React.Component {
     } else {
     try {
       fetch(
-        proxyurl +
+        jaiProxyURL +
           "http://securedmessaging.azurewebsites.net/api/Message_Chain",
         {
           method: "POST",
