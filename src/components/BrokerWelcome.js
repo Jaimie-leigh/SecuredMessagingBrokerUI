@@ -19,8 +19,8 @@ class BrokerWelcome extends React.Component {
     this.setState({ isLoading: true });
     this.setState({ brokerID: this.props.location.state });
     const serachByBrokerId = this.props.location.state;
-    const proxyurl = "https://cors-anywhere.herokuapp.com/";
-    onst jaiProxyURL = "https://nameless-hamlet-06819.herokuapp.com/";
+    // const proxyurl = "https://cors-anywhere.herokuapp.com/";
+    const jaiProxyURL = "https://nameless-hamlet-06819.herokuapp.com/";
     const url =
       "http://securedmessaging.azurewebsites.net/api/broker/" +
       serachByBrokerId;

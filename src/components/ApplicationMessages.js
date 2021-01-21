@@ -34,7 +34,7 @@ class ApplicationMessages extends React.Component {
   componentDidMount() {
     this.setState({ isLoading: true });
     // gets all data for spesific application based on roll number
-    const proxyurl = "https://cors-anywhere.herokuapp.com/";
+    // const proxyurl = "https://cors-anywhere.herokuapp.com/";
     const jaiProxyURL = "https://nameless-hamlet-06819.herokuapp.com/";
     const url =
       "http://securedmessaging.azurewebsites.net/api/ApplicationMessages/" +
@@ -120,7 +120,7 @@ class ApplicationMessages extends React.Component {
     // set message subject from state, will change in if statement if new message
     let messageSubjectId = this.state.formSelectedSubjectId;
 
-    const proxyurl = "https://cors-anywhere.herokuapp.com/";
+    //const proxyurl = "https://cors-anywhere.herokuapp.com/";
     const jaiProxyURL = "https://nameless-hamlet-06819.herokuapp.com/";
 
     // IF replying to exisiting message NEW subject DOES NOT need creating first
