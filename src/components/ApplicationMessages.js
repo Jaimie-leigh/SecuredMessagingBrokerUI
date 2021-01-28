@@ -26,7 +26,7 @@ class ApplicationMessages extends React.Component {
       formChainID: "",
       formMessageBody: "",
       messageSent: false,
-      brokerID: props.location.state,
+      brokerID: props.location.state.brokerID,
     };
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
   }
