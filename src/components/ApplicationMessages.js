@@ -133,9 +133,7 @@ class ApplicationMessages extends React.Component {
           jaiProxyURL +
             "http://securedmessaging.azurewebsites.net/api/Message_Subject",
           {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            // We convert the React state to JSON and send it as the POST body
+            // convert the React state to JSON and send it as the POST body
             body: JSON.stringify({
               messageSubjectId: messageSubjectId,
               subject: this.state.formNewSubject,
@@ -149,9 +147,7 @@ class ApplicationMessages extends React.Component {
             jaiProxyURL +
               "http://securedmessaging.azurewebsites.net/api/Message_Chain",
             {
-              method: "POST",
-              headers: { "Content-Type": "application/json" },
-              // We convert the React state to JSON and send it as the POST body
+              // convert the React state to JSON and send it as the POST body
               body: JSON.stringify({
                 messageChainId: chainID,
                 messageSubjectId: messageSubjectId,
