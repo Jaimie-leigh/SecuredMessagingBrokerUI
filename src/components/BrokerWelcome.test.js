@@ -89,7 +89,9 @@ describe("Broker Welcome tests", () => {
       render(<BrokerWelcome location={brokerId} />, container);
     });
 
-    expect(container.innerHTML).toContain("Click on the roll number to send and view messages relating to the application");
+    expect(container.innerHTML).toContain(
+      "Click on the roll number to send and view messages relating to the application"
+    );
 
     window.fetch.mockRestore();
   });

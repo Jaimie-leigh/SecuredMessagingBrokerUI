@@ -29,8 +29,8 @@ class BrokerWelcome extends React.Component {
       .then((data) => this.setState({ data: data, isLoading: false }));
   }
 
-  routeChange(){
-    window.location.href="/"
+  routeChange() {
+    window.location.href = "/";
   }
 
   render() {

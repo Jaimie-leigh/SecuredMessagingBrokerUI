@@ -24,24 +24,4 @@ describe("Log in snapshot test", () => {
     const tree = renderer.create(<LogIn></LogIn>).toJSON();
     expect(tree).toMatchSnapshot();
   });
-
-//   test("test page renders as epxected when loading", () => {
-//     //const searchInput = queryByLabelText('BrokerId');
-
-//     render(<LogIn></LogIn>, container);
-
-//     // const node = this.BrokerID;
-//     // node.value = "abcde";
-//     // ReactTestUtils.Simulate.change(node);
-
-
-//     const input = TestUtils.findRenderedDOMComponentWithTag(Login, 'input');
-//     input.value = 'Name 4';
-//     TestUtils.Simulate.change(input);
-
-//     //React.addons.TestUtils.Simulate.change(BrokerId, { target: { value: 'a' }})
-//     //fireEvent.change(getByLabelText(/BrokerId/i), { target: { value: 'abcde' }})
-
-//     expect(container.innerHTML).toContain("numbers only allowed");
-//   });
 });

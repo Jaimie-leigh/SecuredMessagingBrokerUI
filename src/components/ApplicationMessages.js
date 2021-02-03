@@ -142,8 +142,8 @@ class ApplicationMessages extends React.Component {
               dateTime: submit_time,
             }),
           }
-        )
-          .then(fetch(
+        ).then(
+          fetch(
             jaiProxyURL +
               "http://securedmessaging.azurewebsites.net/api/Message_Chain",
             {
@@ -156,37 +156,37 @@ class ApplicationMessages extends React.Component {
                 dateTime: submit_time,
               }),
             }
+          ).then((data) =>
+            this.setState(
+              { messageSent: true, isLoading: false, formLableSelected: "new" },
+              this.componentDidMount()
+            )
           )
-            .then((data) =>
-              this.setState(
-                { messageSent: true, isLoading: false, formLableSelected: "new"},
-                this.componentDidMount()
-              )
-          ));
+        );
       } catch (error) {}
     } else {
-    try {
-      fetch(
-        jaiProxyURL +
-          "http://securedmessaging.azurewebsites.net/api/Message_Chain",
-        {
-          // We convert the React state to JSON and send it as the POST body
-          body: JSON.stringify({
-            messageChainId: chainID,
-            messageSubjectId: messageSubjectId,
-            messageBody: this.state.formMessageBody,
-            sentFromId: this.state.brokerID,
-            dateTime: submit_time,
-          }),
-        }
-      )
-        .then((data) =>
+      try {
+        fetch(
+          jaiProxyURL +
+            "http://securedmessaging.azurewebsites.net/api/Message_Chain",
+          {
+            // We convert the React state to JSON and send it as the POST body
+            body: JSON.stringify({
+              messageChainId: chainID,
+              messageSubjectId: messageSubjectId,
+              messageBody: this.state.formMessageBody,
+              sentFromId: this.state.brokerID,
+              dateTime: submit_time,
+            }),
+          }
+        ).then((data) =>
           this.setState(
-            { messageSent: true, isLoading: false, formLableSelected: "new"},
+            { messageSent: true, isLoading: false, formLableSelected: "new" },
             this.componentDidMount()
           )
         );
-    } catch (error) {}};
+      } catch (error) {}
+    }
   }
 
   render() {
@@ -205,7 +205,7 @@ class ApplicationMessages extends React.Component {
       return <p> no data found</p>;
     }
 
-    console.log(data)
+    console.log(data);
     return (
       <div>
         <div className="detailsBanner">

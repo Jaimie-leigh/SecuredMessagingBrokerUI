@@ -112,7 +112,8 @@ describe("ApplicationMessages tests", () => {
     });
 
     expect(container.innerHTML).toContain(
-      "Need to ask us a question about this application?", "Application Chat History"
+      "Need to ask us a question about this application?",
+      "Application Chat History"
     );
 
     window.fetch.mockRestore();

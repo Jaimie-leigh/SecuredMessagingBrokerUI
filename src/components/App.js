@@ -9,16 +9,19 @@ import Footer from "./Footer";
 export default function App() {
   return (
     <Fragment>
-    <Header/>
-    <Router>
-      <Switch>
-        <Route path="/ApplicationMessages" component={ApplicationMessages} ></Route>
-        <Route path="/BrokerWelcome" component={BrokerWelcome}></Route>
-        <Route path="/LogIn" component={LogIn}></Route>
-        <Route path="/" exact component={LogIn}></Route>
-      </Switch>
-    </Router>
-    <Footer />
+      <Header />
+      <Router>
+        <Switch>
+          <Route
+            path="/ApplicationMessages"
+            component={ApplicationMessages}
+          ></Route>
+          <Route path="/BrokerWelcome" component={BrokerWelcome}></Route>
+          <Route path="/LogIn" component={LogIn}></Route>
+          <Route path="/" exact component={LogIn}></Route>
+        </Switch>
+      </Router>
+      <Footer />
     </Fragment>
   );
 }
