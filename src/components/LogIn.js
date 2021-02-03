@@ -57,7 +57,7 @@ export default function LogIn() {
         {isValid === false && (
           <div className="helpText">
             <p>
-              Username should consist of 7 characters including only digitis,
+              Username should consist of 7 characters including only digits,
               please re-enter your username
             </p>
           </div>
