@@ -139,7 +139,7 @@ class ApplicationMessages extends React.Component {
               messageSubjectId: messageSubjectId,
               subject: this.state.formNewSubject,
               rollNumber: this.props.location.state.rollNumber,
-              BrokerID: this.state.brokerID,
+              BrokerID: parseInt(this.state.brokerID),
               dateTime: submit_time,
             }),
           }
@@ -154,7 +154,7 @@ class ApplicationMessages extends React.Component {
                 messageChainId: chainID,
                 messageSubjectId: messageSubjectId,
                 messageBody: this.state.formMessageBody,
-                sentFromId: this.state.brokerID,
+                sentFromId: parseInt(this.state.brokerID),
                 dateTime: submit_time,
               }),
             }
@@ -178,7 +178,7 @@ class ApplicationMessages extends React.Component {
               messageChainId: chainID,
               messageSubjectId: messageSubjectId,
               messageBody: this.state.formMessageBody,
-              sentFromId: this.state.brokerID,
+              sentFromId: parseInt(this.state.brokerID),
               dateTime: submit_time,
             }),
           }
