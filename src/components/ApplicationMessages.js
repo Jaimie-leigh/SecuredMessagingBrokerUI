@@ -116,7 +116,7 @@ class ApplicationMessages extends React.Component {
       //callback to set state instantly
     });
     // get current time to add to post body 'date and time'
-    let submit_time = Moment().format("ddd DD MMM YYYY HH:mm:ss");
+    let submit_time = Moment();
     // set message subject from state, will change in if statement if new message
     let messageSubjectId = this.state.formSelectedSubjectId;
 
