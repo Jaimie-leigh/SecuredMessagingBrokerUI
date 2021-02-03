@@ -170,8 +170,6 @@ class ApplicationMessages extends React.Component {
         jaiProxyURL +
           "http://securedmessaging.azurewebsites.net/api/Message_Chain",
         {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
           // We convert the React state to JSON and send it as the POST body
           body: JSON.stringify({
             messageChainId: chainID,
