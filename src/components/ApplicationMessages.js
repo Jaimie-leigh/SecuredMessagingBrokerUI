@@ -116,7 +116,7 @@ class ApplicationMessages extends React.Component {
       //callback to set state instantly
     });
     // get current time to add to post body 'date and time'
-    let submit_time = Moment();
+    let submit_time = Moment().format("ddd DD MMM YYYY HH:mm:ss");;
     // set message subject from state, will change in if statement if new message
     let messageSubjectId = this.state.formSelectedSubjectId;
 
@@ -134,6 +134,7 @@ class ApplicationMessages extends React.Component {
             "http://securedmessaging.azurewebsites.net/api/Message_Subject",
           {
             method: "POST",
+            headers: { "Content-Type": "application/json" },
             // convert the React state to JSON and send it as the POST body
             body: JSON.stringify({
               messageSubjectId: messageSubjectId,
@@ -149,6 +150,7 @@ class ApplicationMessages extends React.Component {
               "http://securedmessaging.azurewebsites.net/api/Message_Chain",
             {
               method: "POST",
+              headers: { "Content-Type": "application/json" },
               // convert the React state to JSON and send it as the POST body
               body: JSON.stringify({
                 messageChainId: chainID,
@@ -173,6 +175,7 @@ class ApplicationMessages extends React.Component {
             "http://securedmessaging.azurewebsites.net/api/Message_Chain",
           {
             method: "POST",
+            headers: { "Content-Type": "application/json" },
             // We convert the React state to JSON and send it as the POST body
             body: JSON.stringify({
               messageChainId: chainID,
